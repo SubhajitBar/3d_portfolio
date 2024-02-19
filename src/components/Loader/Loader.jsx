@@ -19,7 +19,7 @@ const Loader = ({ started, setStarted }) => {
       `}
     >
      
-      <div className="text-4xl md:text-9xl leading-snug md:leading-loose font-bold text-indigo-900 relative ">
+      <div className=" font-sans text-4xl md:text-9xl leading-snug md:leading-loose font-bold text-indigo-900 relative ">
         <div
           className="absolute left-0 top-0 overflow-hidden truncate text-clip transition-all duration-500"
           style={{

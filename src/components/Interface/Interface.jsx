@@ -355,11 +355,77 @@ const ProjectsSection = () => {
 
 const ContactSection = () => {
   const [state, handleSubmit] = useForm("xgegkpzj");
-  return (
-    <Section className="items-center xs:items-start md:items-start md:justify-start">
+  if (state.succeeded) {
+    return (
+      <Section className="items-center xs:items-start md:items-start md:justify-start">
       <h2 className="text-4xl md:text-5xl font-bold">Contact Me</h2>
       <div className="my-4 md:my-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
-        {state.succeeded ? (
+         <p>Thank you for your message!</p>
+      </div>
+      </Section>
+    )
+}
+  return (
+    <Section className="items-center xs:items-start md:items-start md:justify-start">
+      <h2 className="text-4xl font-bold">Contact Me</h2>
+      <div className="my-4 md:my-6 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
+      <form onSubmit={handleSubmit}>
+            <label
+              htmlFor="name"
+              className="font-medium text-gray-900 block mb-1"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-indigo-500"
+              required
+            />
+            <label
+              htmlFor="email"
+              className="font-medium text-gray-900 block mb-1 mt-4 md:mt-8 "
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-indigo-500"
+              required
+            />
+            <ValidationError
+              field="email"
+              className="mt-1 text-red-500"
+              errors={state.errors}
+            />
+            <label
+              htmlFor="message"
+              className="font-medium text-gray-900 block mb-1 mt-4 md:mt-8"
+            >
+              Message
+            </label>
+            <textarea
+              name="message"
+              id="message"
+              className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-600 outline-indigo-500"
+              required
+            />
+            <ValidationError
+              className="mt-1 text-red-500"
+              errors={state.errors}
+            />
+            <button
+              type="submit"
+              disabled={state.submitting}
+              className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-5 md:mt-12"
+            >
+              Submit
+            </button>
+          </form>
+        {/* {state.succeeded ? (
           <p className="text-gray-900 opacity-80 text-center">
             Thanks for your message!
           </p>
@@ -420,7 +486,7 @@ const ContactSection = () => {
               Submit
             </button>
           </form>
-        )}
+        )} */}
       </div>
     </Section>
   );
