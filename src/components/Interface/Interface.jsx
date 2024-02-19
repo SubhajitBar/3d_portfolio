@@ -36,7 +36,6 @@ const Interface = ({ setSection }) => {
       <SkillsSection />
       <ProjectsSection />
       <ContactSection />
-      <ContactSection />
     </div>
   );
 };
