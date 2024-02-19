@@ -35,7 +35,7 @@ export const projects = [
     techstack: "ReactJS, React-three-fiber",
     description:
       "Visually attractive 3d portfolio website with stunning animations, designs and effects. ",
-    url: "https://prakalpa-swart.vercel.app",
+    url: "https://subhajitbar.vercel.app",
     image: "images/3d-portfolio.png",
   },
 ];
