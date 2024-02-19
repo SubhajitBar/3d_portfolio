@@ -16,6 +16,8 @@ function App() {
   const [started, setStarted] = useState(false);
   const [menuOpened, setMenuOpened] = useState(false);
 
+  const isMobile = window.innerWidth < 768;
+
   useEffect(() => {
     setMenuOpened(false);
   }, [section]);
@@ -28,9 +30,9 @@ function App() {
           ...framerMotionConfig,
         }}
       >
-        <Canvas shadows camera={{ position: [2, 0.7, 3.5], fov: 42 }}>
+        <Canvas shadows camera={{ position: [2, 0.7, 3.5], fov: 39 }}>
           {/* <color attach="background" args={["#d3b2db"]} /> */}
-          <ScrollControls pages={4} damping={0.1}>
+          <ScrollControls pages={isMobile ? 4.5 : 4} damping={0.1}>
             <ScrollManager section={section} onSectionChange={setSection} />
             <Scroll>
               <Suspense>
