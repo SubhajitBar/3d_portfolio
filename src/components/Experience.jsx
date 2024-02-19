@@ -3,7 +3,7 @@ import {
   Float,
   MeshDistortMaterial,
   MeshWobbleMaterial,
-  OrbitControls,
+  // OrbitControls,
   useScroll,
 } from "@react-three/drei";
 import { Scene } from "./Scene/Scene";
@@ -164,7 +164,7 @@ const Experience = ({ menuOpened }) => {
         <motion.group
           ref={characterContainerAboutRef}
           name="CharacterSpot"
-          position={[-0.02, -0.001, -0.157]}
+          position={[0, 0, -0.157]}
           rotation={[-Math.PI, 0.29, -Math.PI]}
           scale={[0.9, 0.9, 0.9]}
         ></motion.group>

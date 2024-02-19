@@ -45,13 +45,13 @@ export default Interface;
 const AboutSection = ({ setSection }) => {
   return (
     <Section mobileTop>
-      <h1 className=" text-4xl sm:text-6xl  font-extrabold leading-snug sm:leading-snug mt-8 sm:mt-0">
+      <h1 className=" text-4xl sm:text-6xl font-black leading-snug sm:leading-snug mt-8 sm:mt-0">
         Hi, I'm
         <br />
         <span className="bg-white px-1 italic">Subhajit Bar</span>
       </h1>
       <motion.p
-        className="text-lg 
+        className="text-base sm:text-lg 
         text-gray-700
          mt-4"
         initial={{
@@ -66,7 +66,7 @@ const AboutSection = ({ setSection }) => {
             delay: 1,
           },
         }}
-        >
+      >
         I am a {"  "}
         <span className="text-indigo-900 gap-1 tracking-widest">
           <Typewriter
@@ -84,7 +84,7 @@ const AboutSection = ({ setSection }) => {
         Where Creativity meets Functionality.
       </motion.p>
       <motion.button
-        className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-4 md:mt-16"
+        className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-base sm:text-lg mt-4 md:mt-16"
         onClick={() => setSection(3)}
         initial={{
           opacity: 0,
@@ -165,7 +165,7 @@ const SkillsSection = () => {
               <div className=" w-full xs:w-64 sm:w-64" key={idx}>
                 <div className="flex justify-between items-end">
                   <motion.h3
-                    className=" text-lg md:text-xl font-bold text-gray-100"
+                    className=" text-base md:text-lg font-bold text-gray-100"
                     initial={{
                       opacity: 0,
                     }}
@@ -355,77 +355,11 @@ const ProjectsSection = () => {
 
 const ContactSection = () => {
   const [state, handleSubmit] = useForm("xgegkpzj");
-  if (state.succeeded) {
-    return (
-      <Section className="items-center xs:items-start md:items-start md:justify-start">
-      <h2 className="text-4xl md:text-5xl font-bold">Contact Me</h2>
-      <div className="my-4 md:my-8 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
-         <p>Thank you for your message!</p>
-      </div>
-      </Section>
-    )
-}
   return (
     <Section className="items-center xs:items-start md:items-start md:justify-start">
       <h2 className="text-4xl font-bold">Contact Me</h2>
       <div className="my-4 md:my-6 p-8 rounded-md bg-white bg-opacity-50 w-96 max-w-full">
-      <form onSubmit={handleSubmit}>
-            <label
-              htmlFor="name"
-              className="font-medium text-gray-900 block mb-1"
-            >
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-indigo-500"
-              required
-            />
-            <label
-              htmlFor="email"
-              className="font-medium text-gray-900 block mb-1 mt-4 md:mt-8 "
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 outline-indigo-500"
-              required
-            />
-            <ValidationError
-              field="email"
-              className="mt-1 text-red-500"
-              errors={state.errors}
-            />
-            <label
-              htmlFor="message"
-              className="font-medium text-gray-900 block mb-1 mt-4 md:mt-8"
-            >
-              Message
-            </label>
-            <textarea
-              name="message"
-              id="message"
-              className="h-32 block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-600 outline-indigo-500"
-              required
-            />
-            <ValidationError
-              className="mt-1 text-red-500"
-              errors={state.errors}
-            />
-            <button
-              type="submit"
-              disabled={state.submitting}
-              className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-5 md:mt-12"
-            >
-              Submit
-            </button>
-          </form>
-        {/* {state.succeeded ? (
+        {state.succeeded ? (
           <p className="text-gray-900 opacity-80 text-center">
             Thanks for your message!
           </p>
@@ -481,12 +415,12 @@ const ContactSection = () => {
             <button
               type="submit"
               disabled={state.submitting}
-              className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-lg mt-5 md:mt-12"
+              className="bg-indigo-600 text-white py-4 px-8 rounded-lg font-bold text-base sm:text-lg mt-5 md:mt-12"
             >
               Submit
             </button>
           </form>
-        )} */}
+        )}
       </div>
     </Section>
   );
